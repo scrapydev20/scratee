@@ -1,9 +1,4 @@
-██████╗ ██████╗██████╗  █████╗ ████████╗███████╗███████╗
-██╔════╝██╔════╝██╔══██╗██╔══██╗╚══██╔══╝██╔════╝██╔════╝
-╚█████╗ ██║     ██████╔╝███████║   ██║   █████╗  █████╗  
- ╚═══██╗██║     ██╔══██╗██╔══██║   ██║   ██╔══╝  ██╔══╝  
-██████╔╝╚██████╗██║  ██║██║  ██║   ██║   ███████╗███████╗
-╚═════╝  ╚═════╝╚═╝  ╚═╝╚═╝  ╚═╝   ╚═╝   ╚══════╝╚══════╝
+/ | / | | _ \ /\ | _| | _| | | _ \ | ( | / / _ \ | | | _| | | |/ _| ||\ // _\ || || ||
 
 > **S**crappy **C**omposable **R**ust **A**utomatic **T**erm **E**xtraction **E**ngine
 
@@ -12,9 +7,9 @@
 ```
                                                           
    ┌─────────────────────────────────────────┐
-   │  "The Merkle Tree enables consensus      │
-   │   via Proof_of_Stake and zk-SNARKs..."   │
-   └────────────────────┬──────────────────────┘
+   │  "The Merkle Tree enables consensus     │
+   │   via Proof_of_Stake and zk-SNARKs..."  │
+   └────────────────────┬────────────────────┘
                          │
                     ╔════▼════╗
                     ║ SCRATEE ║
@@ -86,7 +81,6 @@ That's the whole public surface of `tee-core` at v0.001. Everything else stays p
 version:      0.001
 crates:       tee-core (sync), tee-api (Axum)
 docs:         11 ADR entries, full product handbook
-tooling:      TEE Forge, SCRATEEForge, RustQuest
 ```
 
 Built one deliberate, hand-written commit at a time. 🦀
