@@ -1,26 +1,30 @@
-/ | / | | _ \ /\ | _| | _| | | _ \ | ( | / / _ \ | | | _| | | |/ _| ||\ // _\ || || ||
+```
+ ___   ___   ___      _     _____   ___   ___ 
+/ __| / __| | _ \   /_\   |_   _| | __| | __|
+\__ \ | (__  |   /  / _ \    | |   | _|  | _| 
+|___/ \___| |_|_\ /_/ \_\   |_|   |___| |___|
+```
 
-> **S**crappy **C**omposable **R**ust **A**utomatic **T**erm **E**xtraction **E**ngine
+> Scrappy Composable Rust Automatic Term Extraction Engine
 
 **Term Extraction Engine**, `v0.001`. A hand-crafted Rust workspace that reads raw text (mostly Web3 and blockchain content) and hands you back the important terms, ranked and scored.
 
 ```
-                                                          
-   ┌─────────────────────────────────────────┐
-   │  "The Merkle Tree enables consensus     │
-   │   via Proof_of_Stake and zk-SNARKs..."  │
-   └────────────────────┬────────────────────┘
-                         │
-                    ╔════▼════╗
-                    ║ SCRATEE ║
-                    ╚════╤════╝
-                         │
-        ┌────────────────▼────────────────┐
-        │ 1. Merkle Tree ......... 0.97   │
-        │ 2. Proof_of_Stake ...... 0.88   │
-        │ 3. zk-SNARKs ........... 0.81   │
-        │ 4. consensus ........... 0.64   │
-        └──────────────────────────────────┘
+   +---------------------------------------------+
+   |  "The Merkle Tree enables consensus          |
+   |   via Proof_of_Stake and zk-SNARKs..."       |
+   +---------------------+-----------------------+
+                          |
+                     +----v----+
+                     | SCRATEE |
+                     +----+----+
+                          |
+        +------------------v------------------+
+        | 1. Merkle Tree ......... 0.97       |
+        | 2. Proof_of_Stake ...... 0.88       |
+        | 3. zk-SNARKs ........... 0.81       |
+        | 4. consensus ........... 0.64       |
+        +--------------------------------------+
 ```
 
 ---
@@ -30,7 +34,7 @@
 SCRATEE is the first project in a learning sequence I'm working through:
 
 ```
-  TEE  ──▶  Proof of Terms  ──▶  Knowledge Graphs  ──▶  ScrapyChain
+  TEE  -->  Proof of Terms  -->  Knowledge Graphs  -->  ScrapyChain
  (here)
 ```
 
@@ -42,13 +46,13 @@ A two-crate Cargo workspace, split cleanly by concern:
 
 ```
 scratee/
-├── tee-core/     # pure, sync extraction engine (no async, no I/O)
-│   ├── types.rs         Term, ExtractionResult, ExtractionError
-│   ├── tokenizer.rs     text -> (token, byte_offset) pairs
-│   ├── extractor.rs     candidate detection (Title Case, snake_case, ACRONYMS, TF-IDF unigrams)
-│   └── scorer.rs        TF-IDF scoring, normalization, ranking
-│
-└── tee-api/      # Axum HTTP layer over tee-core
+|-- tee-core/     # pure, sync extraction engine (no async, no I/O)
+|   |-- types.rs         Term, ExtractionResult, ExtractionError
+|   |-- tokenizer.rs     text -> (token, byte_offset) pairs
+|   |-- extractor.rs     candidate detection (Title Case, snake_case, ACRONYMS, TF-IDF unigrams)
+|   `-- scorer.rs        TF-IDF scoring, normalization, ranking
+|
+`-- tee-api/      # Axum HTTP layer over tee-core
 ```
 
 ### Public API
@@ -80,7 +84,6 @@ That's the whole public surface of `tee-core` at v0.001. Everything else stays p
 ```
 version:      0.001
 crates:       tee-core (sync), tee-api (Axum)
-docs:         11 ADR entries, full product handbook
 ```
 
-Built one deliberate, hand-written commit at a time. 🦀
+Built one deliberate, hand-written commit at a time.
